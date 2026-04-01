@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Result</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6dd5ed, #2193b0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background: linear-gradient(135deg,#d4fc79,#96e6a1);
+            width: 700px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .score {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .stars {
+            font-size: 40px;
+            color: gold;
+            margin-bottom: 10px;
+            animation: bounce 1s infinite alternate;
+        }
+
+        .gems {
+            font-size: 22px;
+            color: purple;
+            margin-bottom: 20px;
+        }
+
+        @keyframes bounce {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+        }
+
+        .review-box {
+            text-align: left;
+            margin-top: 20px;
+            max-height: 250px;
+            overflow-y: auto;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+
+        .wrong {
+            background: #ffe5e5;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+
+        .selected {
+            color: red;
+            font-weight: bold;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #2193b0;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #176d80;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+
+    <h1>🎉 Quiz Completed!</h1>
+
+    <div class="score">
+        You scored <strong>{{ score }}</strong> out of <strong>{{ total }}</strong>
+    </div>
+
+    <div class="stars">
+        {% for i in range(stars) %}
+            ⭐
+        {% endfor %}
+    </div>
+
+    <div class="gems">
+        💎 Gems Earned: {{ gems }}
+    </div>
+
+    <h3>Review Your Answers:</h3>
+
+    <div class="review-box">
+        {% for item in review %}
+            {% if item.selected != item.correct %}
+                <div class="wrong">
+                    <p><strong>Question:</strong> {{ item.question }}</p>
+                    <p class="selected">Your Answer: {{ item.selected }}</p>
+                    <p class="correct">Correct Answer: {{ item.correct }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <form action="/">
+        <button type="submit">Play Again</button>
+    </form>
+
+</div>
+
+</body>
+</html>

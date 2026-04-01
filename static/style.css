@@ -1,0 +1,182 @@
+/* =====================================
+   🌍 GLOBAL
+===================================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* =====================================
+   🏠 HOME PAGE (KEEP AWESOME GRADIENT)
+===================================== */
+
+.index-hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4facfe, #a18cd1, #fbc2eb);
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Upload Box */
+
+.index-upload-box {
+    background: rgba(255,255,255,0.2);
+    padding: 40px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    color: white;
+}
+
+/* Username */
+
+.username-input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    width: 200px;
+    outline: none;
+}
+
+/* Buttons */
+
+.start-game-btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.start-game-btn:hover {
+    transform: scale(1.08);
+}
+
+.leaderboard-btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #43e97b, #38f9d7);
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.leaderboard-btn:hover {
+    transform: scale(1.08);
+}
+
+/* =====================================
+   🧠 QUIZ PAGE COLOR (SAFE)
+===================================== */
+
+/* Keep layout same, only background */
+body.quiz-page {
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+}
+
+/* Main quiz card (this targets your existing white box safely) */
+.container,
+.quiz-box,
+.quiz-container {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f) !important;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Option buttons */
+button {
+    background: linear-gradient(45deg, #a1c4fd, #c2e9fb) !important;
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* =====================================
+   🏆 RESULT PAGE COLOR
+===================================== */
+
+body.result-page {
+    background: linear-gradient(135deg, #f6d365, #fda085);
+}
+
+/* Result card */
+.result-box,
+.result-container {
+    background: linear-gradient(135deg, #d4fc79, #96e6a1) !important;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 30px;
+}
+
+/* =====================================
+   🏆 LEADERBOARD
+===================================== */
+
+.leaderboard-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4facfe, #a18cd1, #fbc2eb);
+    padding-top: 50px;
+    text-align: center;
+    color: white;
+}
+
+table {
+    margin: auto;
+    width: 60%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.3);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+th {
+    background: rgba(255,255,255,0.4);
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    text-align: center;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* =====================================
+   ❗ ERROR MESSAGE
+===================================== */
+
+.error-message {
+    color: #ff4d6d;
+    font-weight: bold;
+}
